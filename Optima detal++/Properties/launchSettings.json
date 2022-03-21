@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Optima detal": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

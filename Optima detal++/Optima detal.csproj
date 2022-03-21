@@ -1,0 +1,203 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Optima_detal__</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Dto\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ADODB">
+      <HintPath>..\DLL\adodb.dll</HintPath>
+      <Private>true</Private>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+      <Aliases>global</Aliases>
+    </Reference>
+    <Reference Include="Common">
+      <HintPath>..\DLL\Common.dll</HintPath>
+      <Private>true</Private>
+      <Aliases>global</Aliases>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Common.DataAccess">
+      <HintPath>..\DLL\Common.DataAccess.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <Private>true</Private>
+      <Aliases>global</Aliases>
+    </Reference>
+    <Reference Include="Common.Logic">
+      <HintPath>..\DLL\Common.Logic.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>true</Private>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Common.View.WinForms">
+      <HintPath>..\DLL\Common.View.WinForms.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>true</Private>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="DVCCommunicationServer">
+      <HintPath>..\DLL\DVCCommunicationServer.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>true</Private>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ERP">
+      <HintPath>..\DLL\ERP.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>true</Private>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ICDNBase">
+      <HintPath>..\DLL\ICDNBase.dll</HintPath>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <Aliases>global</Aliases>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ICDNConst">
+      <HintPath>..\DLL\ICDNConst.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ICDNHeal">
+      <HintPath>..\DLL\ICDNHeal.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ICDNHlmn">
+      <HintPath>..\DLL\ICDNHlmn.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ICDNKH">
+      <HintPath>..\DLL\ICDNKH.dll</HintPath>
+      <Aliases>global</Aliases>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <Private>false</Private>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ICDNKONFIGLib">
+      <HintPath>..\DLL\ICDNKONFIGLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ICDNLib">
+      <HintPath>..\DLL\ICDNLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ICDNMail">
+      <HintPath>..\DLL\ICDNMail.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ICDNRVAT">
+      <HintPath>..\DLL\ICDNRVAT.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNTwrb1">
+      <HintPath>..\DLL\ICDNTwrb1.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Interop.craxdrt">
+      <HintPath>..\DLL\Interop.CRAXDRT.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>true</Private>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="IOP_CSRSLib">
+      <HintPath>..\DLL\IOP_CSRSLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="IOP_DBIMPLib">
+      <HintPath>..\DLL\IOP_DBIMPLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="IOP_KASBOLib">
+      <HintPath>..\DLL\IOP_KASBOLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="IZIPMODLib">
+      <HintPath>..\DLL\IZIPMODLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>false</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\DLL\log4net.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>true</Private>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="OnlineFPCommon">
+      <HintPath>..\DLL\OnlineFpCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="RDPFileLib">
+      <HintPath>..\DLL\RDPFileLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

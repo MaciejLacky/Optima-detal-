@@ -1,0 +1,2 @@
+06.03.2022 11:22:31 Logowanie Retrieving the COM class factory for component with CLSID {2C83934E-47CE-4B1E-93FA-5F8656BCFA0C} failed due to the following error: 80040154 Klasa niezarejestrowana. (0x80040154 (REGDB_E_CLASSNOTREG)).
+
