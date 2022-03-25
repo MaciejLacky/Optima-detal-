@@ -54,7 +54,7 @@ namespace Optima_detal__
             if (cbSpecialOfferPriceType.SelectedValue != null)
                 Settings.Default.SpecialOfferPriceType = Convert.ToInt32(cbSpecialOfferPriceType.SelectedValue);
             Settings.Default.Save();
-
+            var listSpecialPrice = Config.GetMapping(MappingType.SpecialPrice);
             string specialOfferName = tbSpecialOfferName.Text;
             DateTime dateFrom = dtpSpecialOfferFrom.Value;
             DateTime dateTo = dtpSpecialOfferTo.Value;
@@ -65,11 +65,40 @@ namespace Optima_detal__
                 tbLog.Text = "Brak danych do wczytania, Sprawdź konfiguracje";
                 return;
             }
-            OptSpecialPrices.CreateSpecialPricesFromTo(specialOfferData, specialOfferName, dateFrom, dateTo, priceType, tbLog);
-
-            Config.AddMaping(0, specialOfferName, 0, dateFrom.ToString(), 0, dateTo.ToString(), MappingType.SpecialPrice);
+            if(specialOfferName == "")
+            {
+                MessageBox.Show($"Wprowadź nazwe promocji.", "Nowa promocja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+           
+            if(listSpecialPrice.Rows.Count > 0)
+            {
+                foreach (DataRow item in listSpecialPrice.Rows)
+                {
+                    var dateFromMapp = Convert.ToDateTime(item["Map_AddItemValue"]);
+                    if ( item["Map_OptValue"].ToString() == specialOfferName)                      
+                    {
+                        MessageBox.Show($"Promocja o tej nazwie {specialOfferName} już istnieje w bazie. Nazwa promocji musi być unikalna.", "Nowa promocja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else if(Convert.ToInt32(item["Map_OptId"]) == priceType && DateTime.Compare(dateFrom ,dateFromMapp)<0)
+                    {
+                        MessageBox.Show($"Zaprogramowano promocje {specialOfferName} dla grupy ceny {priceType} w okresie od {dateFrom} do {dateTo}. Nowa promocja nie może mieć takie samego typu ceny nr {priceType} w tym samym okresie", "Nowa promocja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        OptSpecialPrices.CreateSpecialPricesFromTo(specialOfferData, specialOfferName, dateFrom, dateTo, priceType, tbLog);
+                        Config.AddMaping(0, specialOfferName, 0, dateFrom.ToString(), 0, dateTo.ToString(), MappingType.SpecialPrice);
+                    }
+                }
+            }
+            else
+            {
+                OptSpecialPrices.CreateSpecialPricesFromTo(specialOfferData, specialOfferName, dateFrom, dateTo, priceType, tbLog);
+                Config.AddMaping(priceType, specialOfferName, 0, dateFrom.ToString(), 0, dateTo.ToString(), MappingType.SpecialPrice);
+            }          
             LoadConfig();
-
         }
 
         private void btnSpecialOfferDelete_Click(object sender, EventArgs e)

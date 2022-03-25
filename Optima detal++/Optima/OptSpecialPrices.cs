@@ -109,7 +109,7 @@ namespace Optima_detal__.Optima
         public static bool DeleteSpecialPricesFromTo(string spName, TextBox tblog)
         {
             var specialPrices = GetDtoSpecialPrice(DbSpecialPrices.GetSpecialPricesByName(spName));           
-            int counter = 0;
+            int counter = 1;
             foreach (var item in specialPrices)
             {
                 var success = DbSpecialPrices.UpdatePrice(item, (int)UpdatePriceType.OldPrice);
