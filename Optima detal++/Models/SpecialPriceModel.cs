@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Optima_detal__.Models
 {
-    public class SaleFile
+    public class SpecialPriceModel
     {
-        public string codeItem { get; set; }
+        public string IdItem { get; set; }
+        public string specialPriceName { get; set; }
+        public string codeItem { get; set; }       
         public string salePriceBrutto { get; set; }
         public string oldPriceBrutto { get; set; }
         public string typePrice { get; set; }

@@ -382,5 +382,29 @@ namespace Optima_detal__ {
                 this["SaleSettingsColumnSepColumn2"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FilePath {
+            get {
+                return ((string)(this["FilePath"]));
+            }
+            set {
+                this["FilePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SpecialOfferPriceType {
+            get {
+                return ((int)(this["SpecialOfferPriceType"]));
+            }
+            set {
+                this["SpecialOfferPriceType"] = value;
+            }
+        }
     }
 }

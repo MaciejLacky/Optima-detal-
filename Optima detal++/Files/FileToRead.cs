@@ -11,9 +11,9 @@ namespace Optima_detal__.Files
 {
     public static class FileToRead
     {
-        public static List<SaleFile> ReadFileToSettings(string filePath, TextBox tbLog)
+        public static List<SpecialPriceModel> SpecialOfferFile(string filePath, TextBox tbLog)
         {
-            List<SaleFile> docList = new List<SaleFile>();
+            List<SpecialPriceModel> docList = new List<SpecialPriceModel>();
             string result = "";
             if (string.IsNullOrEmpty(filePath)) return docList;
             StreamReader sr = null;
@@ -47,7 +47,7 @@ namespace Optima_detal__.Files
                 {
                     var itemList = item.Split(new string[] { Settings.Default.SaleSettingsColumnSepColumn1, Settings.Default.SaleSettingsColumnSepColumn2 }, StringSplitOptions.RemoveEmptyEntries);
                     if (itemList.Length > (Settings.Default.SaleSettingsColumnPriceNumber > Settings.Default.SaleSettingsColumnCodeNumber ? Settings.Default.SaleSettingsColumnPriceNumber : Settings.Default.SaleSettingsColumnCodeNumber))
-                        docList.Add(new SaleFile { codeItem = itemList[Settings.Default.SaleSettingsColumnCodeNumber], salePriceBrutto = itemList[Settings.Default.SaleSettingsColumnPriceNumber].Replace("b", "") });
+                        docList.Add(new SpecialPriceModel { codeItem = itemList[Settings.Default.SaleSettingsColumnCodeNumber], salePriceBrutto = itemList[Settings.Default.SaleSettingsColumnPriceNumber].Replace("b", "") });
                 }
                 catch (Exception)
                 {

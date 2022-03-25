@@ -128,5 +128,12 @@ namespace Optima_detal__
             }
 
         }
+        public static void FillComboBox(ComboBox comboBox, Dictionary<int, string> keyValuePairs)
+        {
+            if (keyValuePairs.Count == 0) return;
+            comboBox.DataSource = new BindingSource(keyValuePairs, null);
+            comboBox.DisplayMember = "Value";
+            comboBox.ValueMember = "Key";
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace Optima_detal__
             tbFilePathSaleSettings.Text = Settings.Default.FilePathSaleSettings;
             nudDeleteHeadingCharValue.Value = Settings.Default.DeleteHeadingCharValue;
             tbSaleSettingsColumnSepColumn1.Text = Settings.Default.SaleSettingsColumnSepColumn1;
-            tbSaleSettingsColumnSepColumn2.Text = Settings.Default.SaleSettingsColumnSepColumn2;
+            tbSaleSettingsColumnSepColumn2.Text = Settings.Default.SaleSettingsColumnSepColumn2;          
         }
         private void btnPickLogPath_Click(object sender, EventArgs e)
         {
@@ -60,7 +60,7 @@ namespace Optima_detal__
 
         private void ReadSaleFileToConfig()
         {
-            var file = FileToRead.ReadFileToSettings(Settings.Default.FilePathSaleSettings, tbLogSaleSettings);
+            var file = FileToRead.SpecialOfferFile(Settings.Default.FilePathSaleSettings, tbLogSaleSettings);
             dgvSaleSettings.DataSource = file;
         }
 

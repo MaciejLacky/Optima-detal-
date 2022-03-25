@@ -29,6 +29,7 @@ namespace Optima_detal__
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOptimaSettings = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,29 +40,33 @@ namespace Optima_detal__
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbLog = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSpecialOfferDelete = new System.Windows.Forms.Button();
+            this.btnAddSpecialOffer = new System.Windows.Forms.Button();
+            this.cbSpecialOfferPriceType = new System.Windows.Forms.ComboBox();
+            this.tbSpecialOfferName = new System.Windows.Forms.TextBox();
+            this.dtpSpecialOfferFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtpSpecialOfferTo = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbLogPath = new System.Windows.Forms.TextBox();
+            this.tbFilePath = new System.Windows.Forms.TextBox();
             this.btnPickLogPath = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.dgvSpecialPrice = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.ofdFileSpecialOffers = new System.Windows.Forms.OpenFileDialog();
+            this.bsSpecialPrice = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSpecialPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSpecialPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -145,24 +150,167 @@ namespace Optima_detal__
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbLog);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.btnSpecialOfferDelete);
+            this.groupBox1.Controls.Add(this.btnAddSpecialOffer);
+            this.groupBox1.Controls.Add(this.cbSpecialOfferPriceType);
+            this.groupBox1.Controls.Add(this.tbSpecialOfferName);
+            this.groupBox1.Controls.Add(this.dtpSpecialOfferFrom);
+            this.groupBox1.Controls.Add(this.dtpSpecialOfferTo);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvSpecialPrice);
             this.groupBox1.Location = new System.Drawing.Point(6, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1039, 296);
+            this.groupBox1.Size = new System.Drawing.Size(1039, 334);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Promocja czasowa";
+            // 
+            // tbLog
+            // 
+            this.tbLog.Location = new System.Drawing.Point(621, 26);
+            this.tbLog.Name = "tbLog";
+            this.tbLog.Size = new System.Drawing.Size(411, 27);
+            this.tbLog.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(629, 253);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 20);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Typ ceny Optima";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(629, 217);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Data do:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(629, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Data od:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(629, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 20);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Nazwa promocji";
+            // 
+            // btnSpecialOfferDelete
+            // 
+            this.btnSpecialOfferDelete.Location = new System.Drawing.Point(822, 284);
+            this.btnSpecialOfferDelete.Name = "btnSpecialOfferDelete";
+            this.btnSpecialOfferDelete.Size = new System.Drawing.Size(98, 34);
+            this.btnSpecialOfferDelete.TabIndex = 10;
+            this.btnSpecialOfferDelete.Text = "zakończ";
+            this.btnSpecialOfferDelete.UseVisualStyleBackColor = true;
+            this.btnSpecialOfferDelete.Click += new System.EventHandler(this.btnSpecialOfferDelete_Click);
+            // 
+            // btnAddSpecialOffer
+            // 
+            this.btnAddSpecialOffer.Location = new System.Drawing.Point(926, 284);
+            this.btnAddSpecialOffer.Name = "btnAddSpecialOffer";
+            this.btnAddSpecialOffer.Size = new System.Drawing.Size(98, 34);
+            this.btnAddSpecialOffer.TabIndex = 9;
+            this.btnAddSpecialOffer.Text = "dodaj";
+            this.btnAddSpecialOffer.UseVisualStyleBackColor = true;
+            this.btnAddSpecialOffer.Click += new System.EventHandler(this.btnAddSpecialOffer_Click);
+            // 
+            // cbSpecialOfferPriceType
+            // 
+            this.cbSpecialOfferPriceType.FormattingEnabled = true;
+            this.cbSpecialOfferPriceType.Location = new System.Drawing.Point(822, 250);
+            this.cbSpecialOfferPriceType.Name = "cbSpecialOfferPriceType";
+            this.cbSpecialOfferPriceType.Size = new System.Drawing.Size(202, 28);
+            this.cbSpecialOfferPriceType.TabIndex = 8;
+            // 
+            // tbSpecialOfferName
+            // 
+            this.tbSpecialOfferName.Location = new System.Drawing.Point(822, 146);
+            this.tbSpecialOfferName.Name = "tbSpecialOfferName";
+            this.tbSpecialOfferName.Size = new System.Drawing.Size(202, 27);
+            this.tbSpecialOfferName.TabIndex = 7;
+            // 
+            // dtpSpecialOfferFrom
+            // 
+            this.dtpSpecialOfferFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpSpecialOfferFrom.Location = new System.Drawing.Point(822, 179);
+            this.dtpSpecialOfferFrom.Name = "dtpSpecialOfferFrom";
+            this.dtpSpecialOfferFrom.Size = new System.Drawing.Size(202, 27);
+            this.dtpSpecialOfferFrom.TabIndex = 6;
+            // 
+            // dtpSpecialOfferTo
+            // 
+            this.dtpSpecialOfferTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpSpecialOfferTo.Location = new System.Drawing.Point(822, 212);
+            this.dtpSpecialOfferTo.Name = "dtpSpecialOfferTo";
+            this.dtpSpecialOfferTo.Size = new System.Drawing.Size(202, 27);
+            this.dtpSpecialOfferTo.TabIndex = 5;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tbFilePath);
+            this.groupBox2.Controls.Add(this.btnPickLogPath);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Location = new System.Drawing.Point(621, 66);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(412, 74);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Wgraj plik z promocją";
+            // 
+            // tbFilePath
+            // 
+            this.tbFilePath.Location = new System.Drawing.Point(105, 25);
+            this.tbFilePath.Name = "tbFilePath";
+            this.tbFilePath.Size = new System.Drawing.Size(226, 27);
+            this.tbFilePath.TabIndex = 12;
+            // 
+            // btnPickLogPath
+            // 
+            this.btnPickLogPath.Location = new System.Drawing.Point(337, 23);
+            this.btnPickLogPath.Name = "btnPickLogPath";
+            this.btnPickLogPath.Size = new System.Drawing.Size(68, 29);
+            this.btnPickLogPath.TabIndex = 11;
+            this.btnPickLogPath.Text = "dodaj";
+            this.btnPickLogPath.UseVisualStyleBackColor = true;
+            this.btnPickLogPath.Click += new System.EventHandler(this.btnPickLogPath_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Ścieżka pliku:";
+            // 
+            // dgvSpecialPrice
+            // 
+            this.dgvSpecialPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSpecialPrice.Location = new System.Drawing.Point(23, 26);
+            this.dgvSpecialPrice.Name = "dgvSpecialPrice";
+            this.dgvSpecialPrice.RowHeadersWidth = 51;
+            this.dgvSpecialPrice.RowTemplate.Height = 29;
+            this.dgvSpecialPrice.Size = new System.Drawing.Size(592, 295);
+            this.dgvSpecialPrice.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -184,137 +332,9 @@ namespace Optima_detal__
             this.tabPage3.Text = "Pokaż analize";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // ofdFileSpecialOffers
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 26);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(592, 255);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.tbLogPath);
-            this.groupBox2.Controls.Add(this.btnPickLogPath);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(614, 26);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(412, 74);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Wgraj plik z promocją";
-            // 
-            // tbLogPath
-            // 
-            this.tbLogPath.Location = new System.Drawing.Point(105, 25);
-            this.tbLogPath.Name = "tbLogPath";
-            this.tbLogPath.Size = new System.Drawing.Size(226, 27);
-            this.tbLogPath.TabIndex = 12;
-            // 
-            // btnPickLogPath
-            // 
-            this.btnPickLogPath.Location = new System.Drawing.Point(337, 23);
-            this.btnPickLogPath.Name = "btnPickLogPath";
-            this.btnPickLogPath.Size = new System.Drawing.Size(68, 29);
-            this.btnPickLogPath.TabIndex = 11;
-            this.btnPickLogPath.Text = "dodaj";
-            this.btnPickLogPath.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Ścieżka pliku:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(815, 172);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(202, 27);
-            this.dateTimePicker1.TabIndex = 5;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(815, 139);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(202, 27);
-            this.dateTimePicker2.TabIndex = 6;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(815, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 27);
-            this.textBox1.TabIndex = 7;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(815, 210);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(202, 28);
-            this.comboBox1.TabIndex = 8;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(919, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 34);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "dodaj";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(815, 244);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 34);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "zakończ";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(622, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 20);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Nazwa promocji";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(622, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 20);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Data od:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(622, 177);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 20);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Data do:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(622, 213);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 20);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Typ ceny Optima";
+            this.ofdFileSpecialOffers.FileName = "openFileDialog1";
             // 
             // FormMenu
             // 
@@ -332,9 +352,10 @@ namespace Optima_detal__
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSpecialPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSpecialPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,21 +375,24 @@ namespace Optima_detal__
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSpecialPrice;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnSpecialOfferDelete;
+        private System.Windows.Forms.Button btnAddSpecialOffer;
+        private System.Windows.Forms.ComboBox cbSpecialOfferPriceType;
+        private System.Windows.Forms.TextBox tbSpecialOfferName;
+        private System.Windows.Forms.DateTimePicker dtpSpecialOfferFrom;
+        private System.Windows.Forms.DateTimePicker dtpSpecialOfferTo;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox tbLogPath;
+        private System.Windows.Forms.TextBox tbFilePath;
         private System.Windows.Forms.Button btnPickLogPath;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.OpenFileDialog ofdFileSpecialOffers;
+        private System.Windows.Forms.TextBox tbLog;
+        private System.Windows.Forms.BindingSource bsSpecialPrice;
     }
 }
 
